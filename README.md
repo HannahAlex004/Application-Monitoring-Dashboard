@@ -6,7 +6,7 @@ This repository contains the code and setup for the **Application Monitoring Das
 
 ## 🗓️ Week 1: Setup and Initial Configuration
 
-In Week 1, we focus on setting up the project, configuring necessary dependencies, and making sure everything runs smoothly. Follow the steps below to get started.
+
 ---
 
 ### 📦 Prerequisites
@@ -86,7 +86,7 @@ Follow these steps to get the project running:
     docker-compose logs
     ```
 
-### 🗂️ Folder Structure
 
-Here's a quick overview of the folder structure for Week 1:
+
+
 
