@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 version: '3.8'
 
 =======
@@ -47,4 +47,3 @@ volumes:
       - "8000:8000"
     depends_on:
       - kafka
->>>>>>> 2e64151fcaa0971a5603aa030b30eda353ba2196
