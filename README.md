@@ -86,7 +86,45 @@ Follow these steps to get the project running:
     docker-compose logs
     ```
 
+## 🗓️ Week 2: Kafka Consumer and MySQL Integration
+In **Week 2**, the project was extended to **store logs in a MySQL database** via a Kafka consumer. This allows the logs generated in the previous week (via Kafka) to be inserted into a MySQL database for storage and further processing.
+---
 
+### 📦 Prerequisites
+You should have the following prerequisites installed and set up:
 
+- **Docker**: For running MySQL and Kafka.
+- **Kafka Consumer**: Python script to read from Kafka and insert logs into MySQL.
+- **MySQL Database**: For storing the logs.
+---
+### 🚀 Steps to Run Week 2
 
+#### 1. Ensure MySQL is Running in Docker
 
+Make sure your **MySQL database** is set up and running using Docker. You can start it using:
+
+```bash
+docker-compose up -d
+```
+Check the containers are running by listing active containers:
+```bash
+docker ps
+```
+#### 2. Create the logdb Database in MySQL
+
+Make sure your **MySQL database** is set up and running using Docker. 
+
+### 3. Run the Kafka Consumer Script
+```bash
+python3 consumer.py
+```
+Expected Output:
+```bash
+MySQL connection successful.
+Starting consumer...
+```
+### 4. Verify logs in MySQL
+```bash
+USE logdb;
+SELECT * FROM logs;
+```
