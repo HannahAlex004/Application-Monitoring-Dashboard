@@ -1,6 +1,4 @@
 env/
-<<<<<<< HEAD
-=======
 __pycache__/
 *.pyc
 *.pyo
@@ -11,4 +9,3 @@ __pycache__/
 *.db
 *.DS_Store
 *.egg-info/
->>>>>>> 2e64151fcaa0971a5603aa030b30eda353ba2196
