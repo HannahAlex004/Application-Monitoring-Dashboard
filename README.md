@@ -122,7 +122,11 @@ Expected Output:
 MySQL connection successful.
 Starting consumer...
 ```
-### 4. Verify logs in MySQL
+### 4. Simulate Load Test
+```bash
+python3 load_test.py
+```
+### 5. Verify logs in MySQL
 ```bash
 USE logdb;
 SELECT * FROM logs;
