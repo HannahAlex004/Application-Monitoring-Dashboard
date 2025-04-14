@@ -22,4 +22,8 @@ def simulate_traffic():
         time.sleep(random.uniform(0.1, 1.0)) 
  
 if __name__ == "__main__": 
+<<<<<<< HEAD
     simulate_traffic()
+=======
+    simulate_traffic() 
+>>>>>>> 2e64151fcaa0971a5603aa030b30eda353ba2196
