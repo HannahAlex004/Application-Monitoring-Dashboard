@@ -87,7 +87,6 @@ Follow these steps to get the project running:
     ```
 
 ## 🗓️ Week 2: Kafka Consumer and MySQL Integration
-In **Week 2**, the project was extended to **store logs in a MySQL database** via a Kafka consumer. This allows the logs generated in the previous week (via Kafka) to be inserted into a MySQL database for storage and further processing.
 ---
 
 ### 📦 Prerequisites
