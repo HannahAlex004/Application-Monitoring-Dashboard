@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from fastapi import FastAPI, HTTPException 
 import logging 
 import random 
@@ -169,4 +169,3 @@ async def log_requests(request, call_next):
             producer.close()
 
     return response
->>>>>>> 2e64151fcaa0971a5603aa030b30eda353ba2196
