@@ -131,3 +131,98 @@ python3 load_test.py
 USE logdb;
 SELECT * FROM logs;
 ```
+## 📊 Week 3 – Grafana Dashboard Setup
+---
+
+### 📦 Prerequisites
+You should have the following prerequisites installed and set up:
+
+- **Docker** and **Docker Compose** installed
+- **MySQL** running (refer Week 2 setup)
+- **Kafka + Kafka consumer** script already pushing data to logdb
+- **Grafana** image pulled (or installed)
+
+---
+### 🚀 Steps to Run Week 3
+
+#### 1. Ensure MySQL is Running in Docker
+
+Start all the required three containers using:
+
+```bash
+docker-compose up -d
+```
+Check the containers are running by listing active containers:
+```bash
+docker ps
+```
+#### 2. Configure Grafana
+Make sure your **MySQL database** is set up and running using Docker. 
+- 1.	Access Grafana at
+     ```bash
+     http://localhost:3000
+     ```
+  2. Login with admin/admin (you'll be prompted to change the password)
+  3. Add MySQL as datasource -
+     - Click "Configuration" (gear icon) > "Data Sources"
+     - Click "Add data source"
+     - Select MySQL
+     - Configure with:
+       - Name: MySQL
+       - Host: mysql:3306
+       - Database: logdb
+       - User: root
+       - Password: xxx(your sql pass)
+       - TLS/SSL Mode: Disable
+     - Click "Save & Test"
+  4. Creating Dashboard in Grafana:
+     - Log in  to Grafana,
+       - go to ```bash http://localhost:3000 ```
+       - Login with admin/admin (change password if prompted).
+     - Create a new Dashboard
+       - Look for the "Dashboards" icon (four squares) in the left menu.
+       - Click "New" (button on the top-right).
+       - Select "New Dashboard".
+     - Add a panel
+       You’ll see an empty dashboard.
+       - Click "Add visualization" (or "Add panel").
+         Adding Your First Panel (Example: Request Count)
+       - Select Data Source, Choose MySQL (the one you configured earlier).
+       - Switch to "Code" Mode (SQL)
+       - Click the "Edit SQL" button (or select "SQL" from the query type dropdown).
+       - Paste the SQL Query
+   5. Visualization Settings :
+      - Under "Visualization" (right sidebar), select "Bar chart".
+      - Set a Panel title (e.g., "Request Count by Endpoint").
+      - Save the Panel: Click "Apply" (top-right).
+   6. The sql queries to use  to create panels,
+      - Request Count per Endpoint
+        ```bash
+        SELECT url AS metric,COUNT(*) AS count
+        FROM logs
+        GROUP BY url
+        ORDER BY count DESC
+        ```
+      - Response Time Trends
+        ```bash
+        SELECT timestamp AS time, duration AS value,url AS metric
+        FROM logs
+        ```
+      - Most Frequent Errors
+        ```bash
+        SELECT url AS metric,COUNT(*) AS error_count
+        FROM logs
+        WHERE error = 1
+        GROUP BY url
+        ORDER BY error_count DESC
+        ```
+      - Real-time Logs Feed
+        ```bash
+        SELECT url AS metric,COUNT(*) AS error_count
+        FROM logs
+        WHERE error = 1
+        GROUP BY url
+        ORDER BY error_count DESC
+        ```
+    Add more panels if needed.
+
