@@ -146,7 +146,10 @@ You should have the following prerequisites installed and set up:
 ### 🚀 Steps to Run Week 3
 
 #### 1. Ensure MySQL is Running in Docker
-
+If the MySQL and Kafka containers are already running, start the updated system using
+``bash
+docker-compose -f docker-consumer.yml up -d
+```
 Start all the required three containers using:
 
 ```bash
