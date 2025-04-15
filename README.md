@@ -151,8 +151,7 @@ If the MySQL and Kafka containers are already running, start the updated system 
 ```bash
 docker-compose -f docker-consumer.yml up -d
 ```
-
-Start all the required three containers using:
+Else, Start all the required three containers using:
 
 ```bash
 docker-compose up -d
